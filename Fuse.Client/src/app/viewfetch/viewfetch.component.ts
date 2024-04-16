@@ -12,7 +12,7 @@ import { map } from 'rxjs/operators';
 })
 export class ViewfetchComponent {
   // public data: number[] = [1, 2, 3, 4, 5];
-  public data: DisplayData[] = []
+  public allTasks: DisplayData[] = []
   private currentId: number = 0;
   public startAllEnabled: boolean = false;
 
@@ -25,11 +25,11 @@ export class ViewfetchComponent {
   }
 
   public ButtonClicked_Start(itemId?: number) {
-    this.data[this.data.findIndex(d => d.id == itemId)].status = JobStatus.Running;
+    this.allTasks[this.allTasks.findIndex(d => d.id == itemId)].status = JobStatus.Running;
   }
 
   public ButtonClicked_Stop(itemId?: number) {
-    this.data[this.data.findIndex(d => d.id == itemId)].status = JobStatus.Stopped;
+    this.allTasks[this.allTasks.findIndex(d => d.id == itemId)].status = JobStatus.Stopped;
   }
 
   private HandleActiveTasks(data: boolean) {
@@ -37,12 +37,13 @@ export class ViewfetchComponent {
   }
 
   public addNewTask() {
-    this.data.push({
+    this.allTasks.push({
       id: this.currentId,
       title: 'Process Title',
       header: 'No Text',
       text: 'No Text ' + this.currentId,
-      status: JobStatus.Stopped
+      status: JobStatus.Stopped,
+      action: (id) => console.log('Current Id: ', id)
     });
     this.currentId++;
   }
@@ -50,7 +51,19 @@ export class ViewfetchComponent {
   public startAllTasks() {
     console.info('Starting All Tasks');
     this.activeTasksSubject.next(true);
+    this.allTasks.forEach(t => {
+      t.status = JobStatus.Running;
+      t.action(t.id);
+    });
 
+  }
+
+  public stopAllTasks() {
+    console.info('Stopping all tasks');
+    this.activeTasksSubject.next(false);
+    this.allTasks.forEach(t => {
+      t.status = JobStatus.Stopped;
+    });
   }
 
   private delay(ms: number): Promise<any> {

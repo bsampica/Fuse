@@ -5,15 +5,21 @@
                 <i class="bi bi-node-plus icon-add"></i>
                 <span class="icon-button-text">Add</span>
             </button>
-            <button (click)="startAllTasks()" [disabled]="startAllEnabled" class="btn btn-primary extra-margin-right {{this.isWaiting()}}">
-                <i class="bi bi-gear icon-add"></i>
+            <button (click)="startAllTasks()" [disabled]="startAllEnabled"
+                class="btn btn-primary extra-margin-right {{this.isWaiting()}}">
+                <i class="bi bi-collection-play icon-add"></i>
                 <span class="icon-button-text">Start All</span>
+            </button>
+            <button (click)="stopAllTasks()" class="btn btn-secondary extra-margin-right">
+                <i class="bi bi-stop-btn icon-add"></i>
+                <span class="icon-button-text">Stop All</span>
+                
             </button>
         </div>
     </div>
     <div class="row row-cols-3">
 
-        @for(item of data; track item.id) {
+        @for(item of allTasks; track item.id) {
         <div class="col">
             <div class="card text-center card-margins">
                 <div class="card-header">
