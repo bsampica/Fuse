@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wWLgEq3rMEKkCaNBc3FhMVpW9kAM6XY1tRieOAiQWsXf+AGE2cA8cSC3uHWjhklyZ3tkA9XvfDFRL8CnO4Ifqw==",
+  "dgSpecHash": "ch16O3cC6UOGMXp1p4j0gfq0qSxp7EuKcfE6Zj5oMiDeVIAVQ8ArCIB0b9WNbqYyhOly+lRK8AQzVIUwXVo+GQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Bryan\\Source\\Repos\\Fuse\\Fuse.Server\\Fuse.Server.csproj",
+  "projectFilePath": "C:\\Users\\Bryan\\Source\\Repos\\Fuse\\Fuse.Server\\Fuse.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bryan\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\Bryan\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

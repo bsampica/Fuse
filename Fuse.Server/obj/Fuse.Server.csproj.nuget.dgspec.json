@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Bryan\\Source\\Repos\\Fuse\\Fuse.Server\\Fuse.Server.csproj": {}
+    "C:\\Users\\Bryan\\Source\\Repos\\Fuse\\Fuse.Server\\Fuse.Server.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Bryan\\Source\\Repos\\Fuse\\Fuse.Server\\Fuse.Server.csproj": {
+    "C:\\Users\\Bryan\\Source\\Repos\\Fuse\\Fuse.Server\\Fuse.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Bryan\\Source\\Repos\\Fuse\\Fuse.Server\\Fuse.Server.csproj",
+        "projectUniqueName": "C:\\Users\\Bryan\\Source\\Repos\\Fuse\\Fuse.Server\\Fuse.Server.csproj",
         "projectName": "Fuse.Server",
-        "projectPath": "c:\\Users\\Bryan\\Source\\Repos\\Fuse\\Fuse.Server\\Fuse.Server.csproj",
+        "projectPath": "C:\\Users\\Bryan\\Source\\Repos\\Fuse\\Fuse.Server\\Fuse.Server.csproj",
         "packagesPath": "C:\\Users\\Bryan\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Bryan\\Source\\Repos\\Fuse\\Fuse.Server\\obj\\",
+        "outputPath": "C:\\Users\\Bryan\\Source\\Repos\\Fuse\\Fuse.Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
