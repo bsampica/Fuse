@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row row-spacer">
+        <div class="col text-end">
+            <button (click)="addNewTask()" class="btn btn-primary extra-margin-right">
+                <i class="bi bi-node-plus icon-add"></i>
+                <span class="icon-button-text">Add</span>
+            </button>
+            <button (click)="startAllTasks()" [disabled]="startAllEnabled" class="btn btn-primary extra-margin-right {{this.isWaiting()}}">
+                <i class="bi bi-gear icon-add"></i>
+                <span class="icon-button-text">Start All</span>
+            </button>
+        </div>
+    </div>
+    <div class="row row-cols-3">
+
+        @for(item of data; track item.id) {
+        <div class="col">
+            <div class="card text-center card-margins">
+                <div class="card-header">
+                    {{item.header}}
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{item.title}}</h5>
+                    <p class="card-text">{{item.text}}</p>
+                    @if(item.status == 'running')
+                    {
+                    <button class="btn btn-danger" (click)="ButtonClicked_Stop(item.id)">Stop</button>
+                    }
+                    @else {
+                    <button class="btn btn-success" (click)="ButtonClicked_Start(item.id)">Start</button>
+                    }
+                </div>
+                <div class="card-footer text-body-secondary">
+                    <span class="header-card-title deco-{{item.status}}">{{item.status}}</span>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>

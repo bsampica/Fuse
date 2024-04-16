@@ -1,0 +1,10 @@
+{
+    "/client-api/*": {
+      "target": "https://www.google.com",
+      "protocol" : "https",
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel" : "debug",
+      "pathRewrite" : {"^/client-api/webrequest" : "" }
+    }
+  }
