@@ -43,9 +43,15 @@ export class ViewfetchComponent {
       header: 'No Text',
       text: 'No Text ' + this.currentId,
       status: JobStatus.Stopped,
-      action: (id) => console.log('Current Id: ', id)
+      action: (id) => this.handleTaskAction(id)
     });
     this.currentId++;
+  }
+
+  private handleTaskAction(id:  number) {
+      return new Promise((resolve) => {
+        setTimeout(resolve, 3000);
+      })
   }
 
   public startAllTasks() {
