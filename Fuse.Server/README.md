@@ -1,7 +1,7 @@
 
 # App
 
-This project was generated with [DOT.NET cli](https://microsoft.com/dotnet) version 17.3.3.
+This project was generated with [dotnet cli](https://microsoft.com/dotnet) version 8.0.3.
 
 ## Development server
 
@@ -17,12 +17,12 @@ Run `dotnet build` to build the project. The build artifacts will be stored in t
 
 ## Running unit tests
 
-Run `dotnet test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `dotnet test` to execute the unit tests via the build in commands in the cli
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+not yet developed in this project.
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+pending edit
