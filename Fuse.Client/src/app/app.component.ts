@@ -11,24 +11,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 })
 export class AppComponent {
     title = 'app';
-    
 
     constructor() {
-    }
-
-    button1_Clicked() {
-        console.log('Button 1 Clicked');
-    }
-
-    button2_Clicked() {
-        console.log('Button 2 Clicked');
-    }
-
-    button3_Clicked() {
-        console.log('Button 3 Clicked');
-    }
-
-    button4_Clicked() {
-        console.log('Button 4 Clicked');
     }
 }

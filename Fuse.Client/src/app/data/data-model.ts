@@ -1,5 +1,3 @@
-import { Action } from "rxjs/internal/scheduler/Action";
-
 export interface JobData {
     id: number;
     title: string;
