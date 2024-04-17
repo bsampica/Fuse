@@ -1,6 +1,6 @@
 import { Action } from "rxjs/internal/scheduler/Action";
 
-export interface DisplayData {
+export interface JobData {
     id: number;
     title: string;
     header: string;
@@ -11,5 +11,7 @@ export interface DisplayData {
 
 export enum JobStatus {
     Running = "running",
-    Stopped = "stopped"
+    Stopped = "stopped",
+    Completed = 'completed'
 }
+

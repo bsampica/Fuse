@@ -2,21 +2,23 @@
     margin-bottom: 10px;
 }
 
-.header-card-title
-{
+.header-card-title {
     font-variant: small-caps;
 }
 
 .deco-running {
-    color: green;
+    color: var(--bs-success);
 }
 
 .deco-stopped {
-    color: red;
+    color: var(--bs-danger);
 }
 
-.icon-add
-{
+.deco-completed {
+    color: var(--bs-primary);
+}
+
+.icon-add {
     font-size: 1rem;
     font-weight: bold;
     color: white;

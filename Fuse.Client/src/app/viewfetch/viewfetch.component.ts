@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { JobStatus, DisplayData } from '../data/data-model';
+import { JobStatus, JobData } from '../data/data-model';
 import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -12,7 +12,7 @@ import { map } from 'rxjs/operators';
 })
 export class ViewfetchComponent {
   // public data: number[] = [1, 2, 3, 4, 5];
-  public allTasks: DisplayData[] = []
+  public allTasks: JobData[] = []
   private currentId: number = 0;
   public startAllEnabled: boolean = false;
 
@@ -56,7 +56,7 @@ export class ViewfetchComponent {
     let task = this.allTasks[taskIndex];
     console.log('Handling task with the id of', id);
     await this.delay(5000);
-
+    task.status = JobStatus.Completed;
     console.log('Finished handling the task with id', id);
   }
 
