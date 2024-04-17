@@ -16,18 +16,13 @@ export class ViewfetchComponent {
   private currentId: number = 0;
   public startAllEnabled: boolean = false;
 
-  private activeTasksSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  public $activeTasks = this.activeTasksSubject.asObservable();
-
-
   constructor() {
-    this.$activeTasks.subscribe(data => this.HandleActiveTasks(data));
   }
 
   public ButtonClicked_Start(itemId?: number) {
-   let task =  this.allTasks[this.allTasks.findIndex(d => d.id == itemId)];
-   task.status = JobStatus.Running;
-   task.action(task.id);
+    let task = this.allTasks[this.allTasks.findIndex(d => d.id == itemId)];
+    task.status = JobStatus.Running;
+    task.action(task.id);
   }
 
   public ButtonClicked_Stop(itemId?: number) {
@@ -51,7 +46,7 @@ export class ViewfetchComponent {
   }
 
   private async handleTaskAction(id: number) {
-    const taskIndex = this.allTasks.findIndex( t => t.id === id);
+    const taskIndex = this.allTasks.findIndex(t => t.id === id);
     if (taskIndex === -1) return;
     let task = this.allTasks[taskIndex];
     console.log('Handling task with the id of', id);
@@ -61,8 +56,6 @@ export class ViewfetchComponent {
   }
 
   public startAllTasks() {
-    console.info('Starting All Tasks');
-    this.activeTasksSubject.next(true);
     this.allTasks.forEach(t => {
       t.status = JobStatus.Running;
       t.action(t.id);
@@ -70,8 +63,6 @@ export class ViewfetchComponent {
   }
 
   public stopAllTasks() {
-    console.info('Stopping all tasks');
-    this.activeTasksSubject.next(false);
     this.allTasks.forEach(t => {
       t.status = JobStatus.Stopped;
     });
