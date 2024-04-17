@@ -25,7 +25,9 @@ export class ViewfetchComponent {
   }
 
   public ButtonClicked_Start(itemId?: number) {
-    this.allTasks[this.allTasks.findIndex(d => d.id == itemId)].status = JobStatus.Running;
+   let task =  this.allTasks[this.allTasks.findIndex(d => d.id == itemId)];
+   task.status = JobStatus.Running;
+   task.action(task.id);
   }
 
   public ButtonClicked_Stop(itemId?: number) {
@@ -43,15 +45,19 @@ export class ViewfetchComponent {
       header: 'No Text',
       text: 'No Text ' + this.currentId,
       status: JobStatus.Stopped,
-      action: (id) => this.handleTaskAction(id)
+      action: async (id) => this.handleTaskAction(id)
     });
     this.currentId++;
   }
 
-  private handleTaskAction(id:  number) {
-      return new Promise((resolve) => {
-        setTimeout(resolve, 3000);
-      })
+  private async handleTaskAction(id: number) {
+    const taskIndex = this.allTasks.findIndex( t => t.id === id);
+    if (taskIndex === -1) return;
+    let task = this.allTasks[taskIndex];
+    console.log('Handling task with the id of', id);
+    await this.delay(5000);
+
+    console.log('Finished handling the task with id', id);
   }
 
   public startAllTasks() {
@@ -61,7 +67,6 @@ export class ViewfetchComponent {
       t.status = JobStatus.Running;
       t.action(t.id);
     });
-
   }
 
   public stopAllTasks() {
