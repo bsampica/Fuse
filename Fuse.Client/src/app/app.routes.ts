@@ -1,9 +1,8 @@
-import { Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import { ViewfetchComponent } from './viewfetch/viewfetch.component';
-import { HomeComponent } from './home/home.component';
+import { Routes }           from '@angular/router';
+import { HomeComponent }    from "./components/home/home.component";
+import { JobViewComponent } from "./components/jobview/job-view.component";
 
 export const routes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: 'fetch', component: ViewfetchComponent }
+  { path: '', component: HomeComponent },
+  { path: 'fetch', component: JobViewComponent }
 ];

@@ -1,15 +1,16 @@
 export interface JobData {
-    id: number;
-    title: string;
-    header: string;
-    text: string;
-    status: JobStatus;
-    action: (id: number) => void;
+  id: number;
+  title: string;
+  header: string;
+  text: string;
+  status: JobStatus;
+  fetchUrl: string;
+  work: any;
 }
 
 export enum JobStatus {
-    Running = "running",
-    Stopped = "stopped",
-    Completed = 'completed'
+  Running = "running",
+  Stopped = "stopped",
+  Completed = 'completed'
 }
 

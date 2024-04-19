@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="row row-spacer">
+    <div class="col text-end">
+      <button class="btn btn-primary extra-margin-right">
+        <i class="bi bi-node-plus icon-add"></i>
+        <span class="icon-button-text">Add Job</span>
+      </button>
+      <button class="btn btn-primary extra-margin-right">
+        <i class="bi bi-collection-play icon-add"></i>
+        <span class="icon-button-text">Start All</span>
+      </button>
+      <button class="btn btn-secondary extra-margin-right">
+        <i class="bi bi-stop-btn icon-add"></i>
+        <span class="icon-button-text">Stop All</span>
+      </button>
+    </div>
+  </div>
+  <div class="row row-cols-3">
+    <div class="col">
+      <div class="card text-center card-margins">
+        <div class="card-header">
+          header
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">title</h5>
+          <p class="card-text">text</p>
+
+          <button class="btn btn-danger">Stop</button>
+
+          <button class="btn btn-success" (click)="startJobClicked(1)">Start</button>
+        </div>
+        <div class="card-footer text-body-secondary">
+          <span class="header-card-title">status</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
