@@ -1,43 +1,43 @@
-import { Component }        from '@angular/core';
-import { JobData }          from "../../data/data-model";
-import { JobWorkerService } from "../../services/job-worker.service";
+import { Component }          from '@angular/core';
+import { JobData, JobStatus } from "../../data/data-model";
+import { Observable }         from 'rxjs';
+import { CommonModule }       from '@angular/common';
 
 
 @Component({
-    selector: 'app-jobview',
+    selector: 'app-job-view',
     standalone: true,
-    imports: [],
+    imports: [ CommonModule ],
     templateUrl: './job-view.component.html',
     styleUrl: './job-view.component.scss'
 })
 export class JobViewComponent {
-    private jobWorkerService: JobWorkerService;
+    public JobStatus = JobStatus;
+    public jobs: JobData[] = [];
 
-
-    constructor(jobworkerService: JobWorkerService) {
-        this.jobWorkerService = jobworkerService;
-        this.jobWorkerService
-            .$jobs
-            .subscribe((jobUpdate: JobData[]) => {
-                console.log('job data has changed inside JobWorkerService', jobUpdate);
-            })
+    constructor() {
     }
 
-    public startJobClicked(jobId: number) {
-        console.log('Start Job Clicked', jobId);
-        this.jobWorkerService.startTask(jobId)
-            .then(value => {console.log('Start Task Finished: ', value)})
-            .catch((err) => console.log('Promise errored or never returned', err))
-            .finally(() => console.log('Finally block hit for start task promise'));
+    public async startJobClicked(jobId: number) {
+        console.debug(`Start Job Clicked: ${jobId} :Enter`);
+        console.debug(`Start Job Clicked: ${jobId} :Exit`);
+
+    }
+
+    public async stopJobClicked(jobId: number) {
+        console.debug(`Stop Job Clicked: ${jobId} :Enter`);
+        console.debug(`Stop Job Clicked: ${jobId} :Exit`)
     }
 
     public addJobClicked() {
-
+        console.debug('Add Job Clicked');
     }
 
     public startAllJobsClicked() {
-
+        throw Error('Not Implemented');
     }
 
-
+    public stopAllJobsClicked() {
+        throw Error('Not Implemented');
+    }
 }

@@ -11,6 +11,8 @@ export interface JobData {
 export enum JobStatus {
   Running = "running",
   Stopped = "stopped",
+  Stopping = 'stopping',
+  Starting = 'starting',
   Completed = 'completed'
 }
 
