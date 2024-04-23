@@ -1,12 +1,60 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <h5>Web Fetch</h5>
-        </div>
+  <div class="row">
+    <div class="col">
+      <div class="container">
+        <h5>Web Fetch</h5>
+      </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <button class="btn btn-primary" (click)="buttonClicked()">Web Request</button>
-        </div>
+  </div>
+  <div class="container">
+    &nbsp;
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="container">
+        <button class="btn btn-primary" (click)="addNewJob()">
+          <i class="bi bi-plus-circle-fill icon-button-icon"></i>
+          <span class="">Add Job</span>
+        </button>
+      </div>
     </div>
+  </div>
+  <div class="row">
+    <div class="container">&nbsp;</div>
+  </div>
+  <div class="row row-cols-3">
+    @for (job of _jobs; track job) {
+      <div class="col">
+        <div class="card text-center card-margins">
+          <div class="card-header header-card-title">
+            {{ job.displayHeader }}
+          </div>
+          <div class="card-body">
+            <h5 class="card-title header-card-title">{{ job.displayTitle }}</h5>
+            <p class="card-text">N/A</p>
+
+            @switch (job.displayStatus) {
+              @case (JobStatus.Starting) {
+                <button class="btn btn-success disabled" disabled="disabled">Start</button>
+              }
+              @case (JobStatus.Running) {
+                <button class="btn btn-danger">Stop</button>
+              }
+              @case (JobStatus.Stopping) {
+                <button class="btn btn-danger disabled" disabled="disabled">Stop</button>
+              }
+              @case (JobStatus.Stopped) {
+                <button class="btn btn-success" (click)="startJob(job.id)">Start</button>
+              }
+              @case (JobStatus.Completed) {
+              }
+            }
+          </div>
+          <div class="card-footer text-body-secondary">
+            <span class="header-card-title">{{ job.displayStatus }}</span>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
 </div>

@@ -1,9 +1,19 @@
 
-
 button {
     font-variant: small-caps;
+    background-color: var(--bs-secondary);
 }
 
 button:hover {
+    background-color: var(--bs-primary);
+}
+
+.icon-button-icon {
+    margin-left: 0px;
+    margin-right: 10px;
+
+}
+
+.header-card-title {
     font-variant: small-caps;
 }
